@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Game Example</title>
+    </head>
+
+    <body>
+        <h1>GameLibrary</h1>
+        <div>
+            <h3>Create</h3>
+            <form id="createForm">
+                <div>
+                    <label>Name: <!--label acts as a place for click to begin typing-->
+                        <input id="nameIn" placeholder="Enter a name" name="name"/>
+                    </label>
+                </div>
+                <div>
+                    <label>Genre:
+                        <input id="genre" placeholder="Enter a genre" name="genre"/>
+                    </label>
+                </div>
+                <div>
+                    <label>Price:
+                        <input id="price" placeholder="Enter a price" name="price"/>
+                    </label>
+                </div>
+                <div>
+                <button type="submit">Create</button>
+                </div>
+            </form>
+
+        </div>
+                <div id="readDiv"></div>
+
+        <script src="js/index.js"></script>
+    </body>
+
+</html>
