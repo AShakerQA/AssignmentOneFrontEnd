@@ -20,3 +20,11 @@ createForm.addEventListener('submit', function (event) {
          this.reset();
     }).catch(error => console.log(error));
 });
+
+function deleteGame(id) {
+    fetch("http://localhost:8081/remove/" + id, { //Make request with parameter id
+        method: "DELETE" //method delete removes object
+    }).then(response => {
+        console.log(response);
+    }).catch(error => console.error(error));
+}
