@@ -1,9 +1,8 @@
 const createForm = document.getElementById("createForm");
 const readFormOut = document.getElementById("readDiv");
-const updateForm = document.getElementById("updateForm");
 
-createForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+createForm.addEventListener('submit', function (event) {// on submit do this action (button press)
+    event.preventDefault(); //prevent webpage reloading
     const data = {
         name: this.name.value,
         genre: this.genre.value,
@@ -11,7 +10,7 @@ createForm.addEventListener('submit', function (event) {
     }
     fetch("http://localhost:8081/createGame", { //Make the create request, similar to postman
         method: "POST",
-        body: JSON.stringify(data),
+        body: JSON.stringify(data), //allow data to be stored into the body as a json string
         headers: {
             'Content-Type': "application/json"
         }
@@ -39,7 +38,7 @@ function renderGames(){
 
             const cardBody = document.createElement("div");
             cardBody.className = "card-body";
-            card.appendChild(cardBody);
+            card.appendChild(cardBody); //attaches the new element onto the card
 
             const title = document.createElement("h5");
             title.className = "card-title";
@@ -61,7 +60,7 @@ function renderGames(){
             deleteButton.className = "card-link";
             deleteButton.innerText = "Delete";
             deleteButton.addEventListener("click", function () {
-                deleteGame(game.id);
+                deleteGame(game.id); //pass in id to delete game function
             })
             cardBody.appendChild(deleteButton);
 
@@ -80,7 +79,8 @@ function renderGames(){
                 {
                     updateGame(game.id, inputPrice);
                 })
-                price.innterHTML = inputPrice.value;
+                price.innterHTML = inputPrice.value; //price becmes the value of the input bar where the user inserts
+                //the value, therefore
             }) 
             cardBody.appendChild(updateButton);
 
